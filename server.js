@@ -113,7 +113,7 @@ app.post('/api/exercise/new-user', (req, res) => {
 
 app.post('/api/exercise/add', (req, res) => {
   createAndSaveExcercise(req.body.userId, req.body.description, req.body.duration, req.body.date, (_, userdata, logdata) => {
-    res.json({_id: userdata._id, username: userdata.username, description: logdata.description, duration: logdata.duration,date: logdata.date})
+    res.json({_id: userdata._id, username: userdata.username, description: logdata.description, duration: logdata.duration,date: logdata.date.toDateString()})
   });
 });
 
